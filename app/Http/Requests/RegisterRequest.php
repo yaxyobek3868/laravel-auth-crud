@@ -24,11 +24,14 @@ class registerRequest extends FormRequest
         return [
             'last_name' => 'required|string|max:255',
             'first_name' => 'required|string|max:255',
-            'username' => 'required|string|max:255|unique:users,username',
-            'email' => 'required|string|email|max:255|unique:users,email',
+            'username' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
             'password' => 'required|string|min:6',
+
         ];
     }
+
+
     public function messages(): array
     {
         return [
@@ -44,12 +47,25 @@ class registerRequest extends FormRequest
             'username.unique' => 'Foydalanuvchi nomi allaqachon olingan.',
             'email.required' => 'Email talab qilinadi.',
             'email.string' => 'Email matn bo\'lishi kerak.',
-            'email.email' => 'Email valid email manzili bo\'lishi kerak.',
             'email.max' => 'Email 255 ta belgidan oshmasligi kerak.',
             'email.unique' => 'Email allaqachon olingan.',
             'password.required' => 'Parol talab qilinadi.',
             'password.string' => 'Parol matn bo\'lishi kerak.',
             'password.min' => 'Parol kamida 6 ta belgidan iborat bo\'lishi kerak.',
+            'password.required' => 'Parol noto\'g\'ri.',
+            'username.required' => 'Foydalanuvchi nomi noto\'g\'ri.',
+            'username.unique' => 'Foydalanuvchi nomi allaqachon olingan.',
+            'email.unique' => 'Email allaqachon olingan.',
+            'register' => 'Ro\'yxatdan o\'tishda xatolik yuz berdi.',
+            'register.unique' => 'Ro\'yxatdan o\'tishda xatolik yuz berdi.',
+            'register.required' => 'Ro\'yxatdan o\'tishda xatolik yuz berdi.',
+            'password.min' => 'Parol kamida 6 ta belgidan iborat bo\'lishi kerak.',
+            'email.email' => 'Email manzili @ belgisi bilan kiritilishi kerak'
+
+
+
+
+
         ];
     }
 }

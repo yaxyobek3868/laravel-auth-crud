@@ -35,6 +35,14 @@ class LoginRequest extends FormRequest
             'password.string' => 'Parol matn bo\'lishi kerak.',
             'password.min' => 'Parol kamida 3 ta belgidan iborat bo\'lishi kerak.',
             'password.max' => 'Parol 8 ta belgidan oshmasligi kerak.',
+            'password.required' => 'Parol noto\'g\'ri.',
+            'username.required' => 'Foydalanuvchi nomi noto\'g\'ri.',
+            'password.max' => 'Parol 8 ta belgidan oshmasligi kerak.',
+            'username.required' => 'Foydalanuvchi nomi noto\'g\'ri.',
+            'login' => 'Username yoki parol xato',
+            'login.unique' => 'Username yoki parol xato',
+            'login.required' => 'Username yoki parol xato',
+
         ];
     }
 }

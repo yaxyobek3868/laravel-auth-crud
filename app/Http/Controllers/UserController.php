@@ -8,7 +8,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
+
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->authorizeResource(User::class, 'user');
+    }
     public function index(Request $request)
     {
         $users = User::when($request->search, function ($q) use ($request) {
@@ -28,11 +34,13 @@ class UserController extends Controller
 
     public function create()
     {
+
         return view('users.create');
     }
 
     public function store(UserRequest $request)
     {
+
         User::create([
             'first_name' => $request->validated()['first_name'],
             'last_name'  => $request->validated()['last_name'],
@@ -56,12 +64,13 @@ class UserController extends Controller
     }
 
     public function edit(User $user)
-    {
-        return view('users.edit', compact('user'));
-    }
+        {
+            return view('users.edit', compact('user'));
+        }
 
     public function update(UserRequest $request, User $user)
     {
+
         $user->fill([
             'first_name' => $request->validated()['first_name'],
             'last_name'  => $request->validated()['last_name'],
@@ -84,7 +93,7 @@ class UserController extends Controller
     }
 
     public function destroy(User $user)
-    {
+   {
         $user->delete();
 
         return redirect()

@@ -15,9 +15,7 @@
         <div class="col-md-5">
             <div class="card shadow">
                 <div class="card-header text-center">
-                    <h4>Register
-
-                    </h4>
+                    <h4>Register</h4>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('register') }}" method="POST">
@@ -25,34 +23,49 @@
 
                         <div class="mb-3">
                             <label class="form-label">Last_name</label>
-                            <input type="text" name="last_name" class="form-control" >
+                            <input type="text" name="last_name" class="form-control" value="{{ old('last_name') }}">
+                            @error('last_name')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label class="form-label">First_name</label>
-                            <input type="text" name="first_name" class="form-control">
+                            <input type="text" name="first_name" class="form-control" value="{{ old('first_name') }}">
+                            @error('first_name')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                             <div class="mb-3">
                             <label class="form-label">Username</label>
-                            <input type="text" name="username" class="form-control">
+                            <input type="text" name="username" class="form-control" value="{{ old('username') }}">
+                            @error('username')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+
 
                         <div class="mb-3">
                             <label class="form-label">Email</label>
-                            <input type="email" name="email" class="form-control">
+                            <input type="text" name="email" class="form-control" value="{{ old('email') }}">
+                            @error('email')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Password</label>
-                            <input type="password" name="password" class="form-control">
+                            <input type="password" name="password" class="form-control" value="{{ old('password') }}">
+                            @error('password')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
-
 
                         <button type="submit" class="btn btn-success w-100">
                             Register
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-r-circle-fill" viewBox="0 0 16 16">
                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.5 4.002V12h1.335V8.924H8.52L9.98 12h1.52L9.856 8.701c.828-.299 1.495-1.101 1.495-2.238 0-1.488-1.03-2.461-2.74-2.461zm1.335 1.09v2.777h1.549c.995 0 1.573-.463 1.573-1.36 0-.913-.596-1.417-1.537-1.417z"/>
                             </svg>
-                        </button>
+
                     </form>
                 </div>
                 <div class="card-footer text-center">

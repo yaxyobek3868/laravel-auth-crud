@@ -34,6 +34,7 @@ class UserFactory extends Factory
            'date_of_birth' => $this->faker->optional()->date(),
            'address' => $this->faker->optional()->address(),
            'remember_token' => Str::random(10),
+
         ];
     }
 

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->integer('role')->default(1); // 1 - user, 2 - admin
             $table->bigInteger('phone_number')->nullable();
             $table->date('date_of_birth')->nullable();
             $table->string('address')->nullable();
@@ -39,6 +40,7 @@ return new class extends Migration
             $table->text('user_agent')->nullable();
             $table->longText('payload');
             $table->integer('last_activity')->index();
+
         });
     }
 
